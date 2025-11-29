@@ -38,9 +38,10 @@ const Navbar = () => {
       {/* Main Navbar */}
       <div className="px-[5%] py-4">
         <div className="flex justify-between items-center">
+          
           <div className="flex items-center gap-4">
-            <div className="w-15 h-15 w-sm-2 border-2 border-white flex items-center justify-center">
-              <span className="text-white text-lg font-bold">LP</span>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-15 lg:h-15 border-2 border-white flex items-center justify-center">
+              <span className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-bold">LP</span>
             </div>
           </div>
 
@@ -231,13 +232,13 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="bg-[#0B1F3B] text-white flex flex-col lg:flex-row min-h-[90vh]">
-      <div className="flex-1 px-[5%] py-12 md:py-24 flex flex-col justify-center">
+    <section id="home" className="bg-[#0B1F3B] md-py-10 text-white flex flex-col lg:flex-row min-h-[90vh]">
+      <div className="flex-1 px-[5%] py-12 md:py-24  flex flex-col justify-center">
         <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight mb-8 md:mb-12 tracking-tight">
           Over the past decade, Lester Philander has helped 951 businesses across industries with Sales, Marketing, Leadership, Systems, and Strategy.
         </h1>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-8 md:mb-12">
+        <div className="flex flex-row gap-8 md:gap-12 mb-8 md:mb-12">
           {stats.map((stat, index) => (
             <div key={index} className="flex-1 text-center md:text-left">
               <span className="block text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-none mb-2">
@@ -253,7 +254,7 @@ const Hero = () => {
         </button>
       </div>
 
-      <div className="flex-1 relative overflow-hidden min-h-[400px] lg:min-h-0 flex items-center justify-center">
+      <div className="flex-1 relative overflow-hidden min-h-[350px] lg:min-h-0 flex items-center justify-center">
         <img
           src={Lester}
           alt="Lester Philander"
@@ -264,51 +265,20 @@ const Hero = () => {
   );
 };
 
-// About Component
-// const About = () => {
-//   return (
-//     <section id="about" className="bg-gray-100 px-[5%] py-16 md:py-24 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-//       <div className="flex-1 max-w-md w-full">
-//         <img
-//           src={Lester}
-//           alt="Lester Philander"
-//           className="w-full h-auto"
-//         />
-//       </div>
-
-//       <div className="flex-1 lg:flex-[1.8]">
-//         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-black tracking-tight">
-//           ABOUT
-//         </h2>
-//         <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-black tracking-tight">Lester Philander: A Visionary Architect of Business Excellence</h3>
-//         <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-6 md:mb-8">
-//           A seasoned entrepreneur who has left an indelible mark in the coffee shop industry with the renowned Corp Cafe. However, my entrepreneurial ventures extend beyond coffee, reflecting a passion for driving positive change in the business landscape.
-//           As the Founder and Director of PHL International Consulting (PTY) Ltd, my commitment lies in empowering businesses through innovative solutions. The company has played a pivotal role in assisting call center startups, contributing to their growth and success.        </p>
-
-//         <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-6 md:mb-8">One of my proudest achievements is the creation of Empire 629, a Business Development Program designed to empower aspiring entrepreneurs. This initiative imparts the knowledge and skills necessary to build thriving businesses, showcasing a commitment to nurturing the next generation of business leaders.
-
-//           Lester Philander has authored a compelling book, delving into his own real-life experiences when he embarked on the journey of starting his own business. In this book, he shares insightful descriptions and narratives, aiming to inspire and assist other aspiring business owners on their entrepreneurial path. </p>
-//         <button className="bg-[#0B1F3B] text-white px-8 py-4 text-xs tracking-[2px] font-semibold uppercase hover:bg-[#152c4f] transition-all duration-300 w-full md:w-auto">
-//           READ MORE
-//         </button>
-//       </div>
-//     </section>
-//   );
-// };
 
 const About = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
     <section id="about" className="bg-gray-100 px-[5%] py-16 md:py-24 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-      <div className="flex-1 max-w-md w-full">
-        <img
-          src={Lester}
-          alt="Lester Philander"
-          className="w-full h-auto"
-        />
-      </div>
-
+      
+<div className="flex-1 w-32 sm:w-48 md:w-64 lg:max-w-md">
+  <img
+    src={Lester}
+    alt="Lester Philander"
+    className="w-full h-auto"
+  />
+</div>
       <div className="flex-1 lg:flex-[1.8]">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-black tracking-tight">
           ABOUT LESTER PHILANDER
@@ -319,16 +289,16 @@ const About = () => {
           As the Founder and Director of PHL International Consulting (PTY) Ltd, my commitment lies in empowering businesses through innovative solutions. The company has played a pivotal role in assisting call center startups, contributing to their growth and success.        </p>
 
         {showMore && (
-  <>
-    <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-6 md:mb-8">One of my proudest achievements is the creation of Empire 629, a Business Development Program designed to empower aspiring entrepreneurs. This initiative imparts the knowledge and skills necessary to build thriving businesses, showcasing a commitment to nurturing the next generation of business leaders.
+          <>
+            <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-6 md:mb-8">One of my proudest achievements is the creation of Empire 629, a Business Development Program designed to empower aspiring entrepreneurs. This initiative imparts the knowledge and skills necessary to build thriving businesses, showcasing a commitment to nurturing the next generation of business leaders.
 
-      Lester Philander has authored a compelling book, delving into his own real-life experiences when he embarked on the journey of starting his own business. In this book, he shares insightful descriptions and narratives, aiming to inspire and assist other aspiring business owners on their entrepreneurial path. </p>
-    
-    <p className="text-base md:text-lg leading-relaxed text-gray-900 mb-6 md:mb-8 italic">What to expect when going self-employed - Lester Philander</p>
-  </>
-)}
-        
-        <button 
+              Lester Philander has authored a compelling book, delving into his own real-life experiences when he embarked on the journey of starting his own business. In this book, he shares insightful descriptions and narratives, aiming to inspire and assist other aspiring business owners on their entrepreneurial path. </p>
+
+            <p className="text-base md:text-lg leading-relaxed text-gray-900 mb-6 md:mb-8 italic">What to expect when going self-employed - Lester Philander</p>
+          </>
+        )}
+
+        <button
           onClick={() => setShowMore(!showMore)}
           className="bg-[#0B1F3B] text-white px-8 py-4 text-xs tracking-[2px] font-semibold uppercase hover:bg-[#152c4f] transition-all duration-300 w-full md:w-auto"
         >
@@ -513,98 +483,7 @@ const Services = () => {
   );
 };
 
-// // Footer Component
-// const Footer = () => {
-//   const [email, setEmail] = useState('');
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     alert(`Newsletter subscription: ${email}`);
-//     setEmail('');
-//   };
-
-//   const quickLinks = [
-//     { label: 'Home', href: '#home' },
-//     { label: 'Philander Consulting', href: '#consulting' },
-//     { label: 'Books', href: '#books' },
-//     { label: 'Book Lester', href: '#book-lester' },
-//   ];
-
-//   const socialLinks = [
-//     { label: 'LINKEDIN', href: '#' },
-//     { label: 'INSTAGRAM', href: '#' },
-//     { label: 'YOUTUBE', href: '#' },
-//     { label: 'CORP RADIO', href: '#' },
-//   ];
-
-//   return (
-//     <footer className="bg-[#0B1F3B] text-[#BFC3C9] px-[5%] py-12">
-//       <div className="max-w-7xl mx-auto">
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
-//           <div>
-//             <h4 className="text-white text-base tracking-wider mb-6 font-bold">
-//               CONTACT
-//             </h4>
-//             <p className="text-sm mb-3">info@lesterphilander.com</p>
-//             <p className="text-sm">Cape Town, South Africa</p>
-//           </div>
-
-//           <div>
-//             <h4 className="text-white text-base tracking-wider mb-6 font-bold">
-//               QUICK LINKS
-//             </h4>
-//             {quickLinks.map((link, index) => (
-//               <a
-//                 key={index}
-//                 href={link.href}
-//                 className="block text-sm mb-3 hover:text-white transition-colors duration-300"
-//               >
-//                 {link.label}
-//               </a>
-//             ))}
-//           </div>
-
-//           <div>
-//             <h4 className="text-white text-base tracking-wider mb-6 font-bold">
-//               NEWSLETTER
-//             </h4>
-//             <div className="space-y-4">
-//               <input
-//                 type="email"
-//                 placeholder="Enter your email"
-//                 value={email}
-//                 onChange={(e) => setEmail(e.target.value)}
-//                 className="w-full px-4 py-3 bg-white/10 border border-[#BFC3C9] text-white placeholder-[#BFC3C9] text-sm focus:outline-none focus:border-white"
-//               />
-//               <button
-//                 onClick={handleSubmit}
-//                 className="w-full bg-[#BFC3C9] text-[#0B1F3B] px-6 py-3 font-semibold tracking-wider uppercase text-xs hover:bg-white transition-all duration-300"
-//               >
-//                 SUBSCRIBE
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="flex flex-wrap justify-center gap-4 md:gap-6 my-8">
-//           {socialLinks.map((link, index) => (
-//             <a
-//               key={index}
-//               href={link.href}
-//               className="text-sm hover:text-white transition-colors duration-300"
-//             >
-//               {link.label}
-//             </a>
-//           ))}
-//         </div>
-
-//         <div className="text-center pt-8 border-t border-[#BFC3C9]/20 text-sm">
-//           <p>© 2025 Lester Philander. All rights reserved.</p>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
 
 // Footer Component
 const Footer = () => {
@@ -613,18 +492,18 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Clear previous messages
     setMessage({ type: '', text: '' });
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (!email) {
       setMessage({ type: 'error', text: 'Please enter your email address.' });
       return;
     }
-    
+
     if (!emailRegex.test(email)) {
       setMessage({ type: 'error', text: 'Please enter a valid email address.' });
       return;
@@ -671,8 +550,8 @@ const Footer = () => {
               QUICK LINKS
             </h4>
             {quickLinks.map((link, index) => (
-              
-                <a key={index}
+
+              <a key={index}
                 href={link.href}
                 className="block text-sm mb-3 hover:text-white transition-colors duration-300"
               >
@@ -699,14 +578,13 @@ const Footer = () => {
               >
                 SUBSCRIBE
               </button>
-              
+
               {message.text && (
                 <div
-                  className={`p-3 text-sm rounded ${
-                    message.type === 'success'
+                  className={`p-3 text-sm rounded ${message.type === 'success'
                       ? 'bg-green-500/20 border border-green-500 text-green-100'
                       : 'bg-red-500/20 border border-red-500 text-red-100'
-                  }`}
+                    }`}
                 >
                   {message.text}
                 </div>
@@ -717,8 +595,8 @@ const Footer = () => {
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 my-8">
           {socialLinks.map((link, index) => (
-            
-             <a key={index}
+
+            <a key={index}
               href={link.href}
               className="text-sm hover:text-white transition-colors duration-300"
             >
@@ -741,14 +619,16 @@ export default function App() {
   return (
     <div className="overflow-x-hidden">
       <Navbar />
-      <Hero />
-      <About />
-      <Affiliations />
-      <Tagline />
-            <Testimonials />
+      <div className="pt-10 md:pt-10">
+        <Hero />
+        <About />
+        <Affiliations />
+        <Tagline />
+        <Testimonials />
 
-      <Services />
-      <Footer />
+        <Services />
+        <Footer />
+      </div>
     </div>
   );
 }
